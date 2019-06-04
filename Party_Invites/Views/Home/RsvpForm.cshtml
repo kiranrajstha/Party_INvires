@@ -1,0 +1,46 @@
+﻿@model Party_Invites.Models.GuestResponse 
+
+@{
+    Layout = null;
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+    <link rel="stylesheet" href="~/css/styles.css"/>
+</head>
+<body>
+    <p>This is RsvpForm.cshtml (From Views/Home/) </p>
+
+    <form asp-action="RsvpForm" method="POST">
+        <!--/*<form method="post" action="/Home/RsvpForm">
+    -->
+        <div asp-validation-summary="All"></div>
+        <p>
+            <label asp-for="Name">Your Name :</label>
+            <input asp-for="Name" />
+        </p>
+        <!--So when the validation error occurs, INPUT has the error class. So, the css acts on the input box. -->
+        <p>
+            <label asp-for="Email">Your email:</label>
+            <input asp-for="Email" />
+        </p>
+        <p>
+            <label asp-for="Phone">Your phone:</label>
+            <input asp-for="Phone" />
+        </p>
+        <p>
+            <label asp-for="WillAttend">Will you attend the party?</label>
+            <select asp-for="WillAttend">
+                <option value="">Choose an option </option>
+                <option value="true">Yes, I'll be there</option>
+                <option value="false">No, I can't make it. </option>
+            </select>
+        </p>
+        <button type="submit"> Submit RSVP</button>
+    </form>
+
+</body>
+</html>
